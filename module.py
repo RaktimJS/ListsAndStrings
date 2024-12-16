@@ -28,7 +28,7 @@ TURN LINE WRAPPING OFF FOR A BETTER VIEW
 |        6. CHECK module1.py                                        |
 +-------------------------------------------------------------------+
 
-Last Edited on 16/12/2024
+Last Edited: 16/12/2024
 
 """
 
