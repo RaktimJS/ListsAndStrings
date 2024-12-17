@@ -3,7 +3,7 @@
 TURN LINE WRAPPING OFF FOR A BETTER VIEW
 
 +-------------------------------------------------------------------+
-|***------------   MODULE0   ------------***                        |
+|***------------   MODULE   ------------***                         |
 |                                                                   |
 |                                                                   |
 |Author: Raktim JS                                                  |
@@ -28,7 +28,7 @@ TURN LINE WRAPPING OFF FOR A BETTER VIEW
 |        6. CHECK module1.py                                        |
 +-------------------------------------------------------------------+
 
-Last Edited: 16/12/2024
+Last Edited on 17/12/2024
 
 """
 
@@ -54,7 +54,7 @@ elements = [
         'Chennai', 'Jaipur', 'Ahmedabad', 'Pune', 'Lucknow',
         'Kanpur', 'Surat', 'Bhopal', 'Indore', 'Patna',
         'Ranchi', 'Guwahati', 'Dehradun', 'Chandigarh', 'Thiruvananthapuram',
-        'Bhubaneswar', 'Varanasi', 'Amritsar', 'Jodhpur', 'Agra'
+        'Bhubaneswar', 'Varanasi', 'Amritsar', 'Jodhpur', 'Agra',
 
         'Arjun', 'Priya', 'Neha', 'Rahul', 'Ishita',
         'Rohan', 'Kavya', 'Varun', 'Ananya', 'Akash',
@@ -64,7 +64,7 @@ elements = [
 ]
 
 def randList():
-        noOfElements = randint(1, 5)
+        noOfElements = randint(5, 7)
         output = []
         i = 0
 
@@ -89,8 +89,8 @@ def charRemover():
         
         print("\n")
 
-        str = str.upper()
-        toBeRemoved = toBeRemoved.upper()
+        str = str.title()
+        toBeRemoved = toBeRemoved.title()
 
         if len(toBeRemoved) == 1:
                 if toBeRemoved not in str:
@@ -115,8 +115,8 @@ def charInstance():
         str = input("Enter a string: ")
         targetChar = input("Enter the character to count instances of: ")
 
-        str = str.upper()
-        targetChar = targetChar.upper()
+        str = str.title()
+        targetChar = targetChar.title()
 
         if len(targetChar) == 1:
                 if targetChar not in str:
@@ -265,8 +265,8 @@ def filterDupes():
         print("_______________________________________________________\n")
 
         str = input("Enter a string: ")
-        str = str.upper()
-        placeholder = str.upper()
+        str = str.title()
+        placeholder = str.title()
         str = str.replace(" ", "")
 
         singleAppearence = []
@@ -284,37 +284,40 @@ def filterDupes():
         print(f"\nThe list of elements that appear only once in {placeholder}: {singleAppearence}")
         print(f"The list of elements that appear more that once in {placeholder}: {multiAppearence}")
 
-def listOperations():
-        print("PERFORM VARIOUS OPERATIONS TO A LIST")
-        print("____________________________________\n")
-
-        randomList = randList()
-        print("        Original List: ", randomList)
-        newList = randomList
 
 
+"""
 
-        # Append Values
+/*----------LIST OPERATIONS----------*/
+
+"""
+
+
+
+# Appender
+def appender(newList):
         print("\n\n        APPEND VALUES")
         print("        -------------")
         value = input("        Enter a value: ")
-        newList.append(value)
+        newList.append(value.title())
 
         print("\n        The new list is: \n        ", newList)
 
 
 
-
-        # Insert Values
+# Value Inserter
+def valueInserter(newList):
         print("\n\n\n        INSERT VALUES")
         print("        -------------")
         elem = input("        Enter an value: ")
+        elem = elem.title()
 
         print(f"\n        If position entered exceeds list length. It will be set to it to 1 more than list length")
 
 
         while True:
                 pos = input(f"\n        Enter the position you want \"{elem}\" to be at: ")
+                pos.title()
 
                 try:
                         pos = int(pos)
@@ -334,8 +337,8 @@ def listOperations():
 
 
 
-        
-        # Append List
+# List Appender
+def listAppender(newList):
         print("\n\n\n        APPEND LIST")
         print("        -----------")
 
@@ -347,6 +350,7 @@ def listOperations():
                 inputTaker = input("        Enter a value (Type 'END' to end. Case sensitive): ")
                         
                 if inputTaker != "END":
+                        inputTaker = inputTaker.title()
                         numList.append(inputTaker)
                         i += 1
                 else:
@@ -363,12 +367,9 @@ def listOperations():
         print("\n\n\n        MODIFY ELEMENTS")
         print("        ---------------")
 
-        elemVal = input("        Enter a value: ")
-        
-
         while True: 
                 try:
-                        posVal = input("        Enter the position: ")
+                        posVal = input("        Enter the position of the value you want to modify: ")
                         posVal = int(posVal)
                         posVal = posVal - 1
                         break;
@@ -377,6 +378,9 @@ def listOperations():
                 except EOFError:
                         print("\n        Invalid Input\n")
         
+        elemVal = input("        Enter the new value: ")
+        elemVal = elemVal.title()
+
         newList.pop(posVal)
         newList.insert(posVal, elemVal)
 
@@ -384,8 +388,8 @@ def listOperations():
 
 
 
-
-        # Delete Element by position
+# Delete Element By Position
+def delByPos(newList):
         print("\n\n\n        DELETE ELEMENT BY POSITION")
         print("        --------------------------")
 
@@ -406,43 +410,83 @@ def listOperations():
 
 
 
-
-        # Delete element by value
+# Delete Element By Value
+def delByVal(newList):
         print("\n\n\n        DELETE ELEMENT BY VALUE")
         print("        -----------------------")
 
-        value = input("        Enter the value: ")
-
         while True:
+                value = input("        Enter the value: ")
+                value = value.title()
+
                 if value in newList:
                         newList.remove(value)
                         break;
                 else:
                         print("        Entered value is not in the list")
 
-        print("        The updated list is: \n        ", randomList)
+        print("        The updated list is: \n        ", newList)
 
 
 
-
-        # Ascending sort
+# Ascending Sort
+def ascendingSorter(newList):
         print("\n\n\n        ASCENDING SORT")
         print("        --------------")
 
-        print("        Sorted in ascending order: \n        ", newList.sort(reverse=False))
+        for i in newList:
+                if type(i) == list:
+                        listList = newList[newList.index(i)]
+                        newList.remove(i)
+                        break
+
+        newList = sorted(newList, key = str.upper)
+
+        newList.append(listList)
+
+        print("        Sorted in ascending order: \n        ", end="")
+        print(newList)
+        
 
 
-
-
-        # Descendng sort
+# Descending Sort
+def descendingSorter(newList):
         print("\n\n\n        DESCENDING SORT")
         print("        ---------------")
 
-        print("        Sorted in descending order: \n        ", newList.sort(reverse=True))
+        for i in newList:
+                if type(i) == list:
+                        listList = newList[newList.index(i)]
+                        newList.remove(i)
+                        break
+
+        newList = sorted(newList, key = str.upper)
+
+        newList.append(listList)
+
+        print("        Sorted in descending order: \n        ", end="")
+        print(newList.reverse())
 
 
 
+# Parent Function
+def listOperations():
+        print("PERFORM VARIOUS OPERATIONS TO A LIST")
+        print("____________________________________\n")
+
+        randomList = randList()
+        newList = randomList
+
+        print("        Original List: ", newList)
+
+        appender(newList)
+        valueInserter(newList)
+        listAppender(newList)
+        delByPos(newList)
+        delByVal(newList)
+        ascendingSorter(newList)
+        descendingSorter(newList)
 
         # Display
         print("\n\n\n")
-        print("        The list is: \n        ", newList)
+        print("        The list after all different operations is: \n        ", newList)

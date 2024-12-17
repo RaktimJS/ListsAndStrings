@@ -1,21 +1,24 @@
+# Last Edited on 17/12/2024
+
+
+
+
 import module
 import time
 from os import system as system
 from os import remove as remove
 
-system('pyinstaller --onefile --distpath "." script.py')
-system('rmdir /s /q "build"')
-system('rmdir /s /q "dist"')
-system('rmdir /s /q "__pycache__"')
-remove('script.spec')
+# system('pyinstaller --onefile --distpath "." script.py')
+# system('rmdir /s /q "build"')
+# system('rmdir /s /q "dist"')
+# system('rmdir /s /q "__pycache__"')
+# remove('script.spec')
 system('cls')
 
 def timer(s):
         while s: 
                 time.sleep(1)
                 s -= 1
-
-# Last Edited: 16/12/2024
 
 
 
@@ -68,7 +71,8 @@ def main():
                                 print("You selected OPTION 6")
                                 print("\n\n------------------------------\n\n")
                                 module.listOperations()
-                                break
+                        
+                        break
                 except ValueError:
                         print("\nInvalid Input\n")
                 except EOFError:
