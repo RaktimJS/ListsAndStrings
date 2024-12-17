@@ -8,11 +8,11 @@ import time
 from os import system as system
 from os import remove as remove
 
-# system('pyinstaller --onefile --distpath "." script.py')
-# system('rmdir /s /q "build"')
-# system('rmdir /s /q "dist"')
-# system('rmdir /s /q "__pycache__"')
-# remove('script.spec')
+system('pyinstaller --onefile --distpath "." script.py')
+system('rmdir /s /q "build"')
+system('rmdir /s /q "dist"')
+system('rmdir /s /q "__pycache__"')
+remove('script.spec')
 system('cls')
 
 def timer(s):
