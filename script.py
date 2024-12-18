@@ -1,4 +1,4 @@
-# Last Edited on 17/12/2024
+# Last Edited on 18/12/2024
 
 
 
@@ -34,42 +34,43 @@ def main():
         print("Enter 6 to PERFORM OPERATIONS ON A LIST (Python) FROM A LIST (general)\n\n")
 
         while True:
-                listSelector = input("Enter your selection from the above list (Exceding values will be adjusted): ")
+                listSelector = input("Enter your selection from the above list (Exceding values will be adjusted): \033[38;2;255;165;0m")
+                print("\033[36m", end="")
 
                 try:
                         listSelector = int(listSelector)
                         
                         if listSelector < 0:
                                 print("Input out of range. Being set to 1")
-                                print("\n\n------------------------------")
+                                print("\n\n---------------------------------------------")
                                 module.charRemover()
                         elif listSelector > 6:
                                 print("Input out of range. Being set to 6")
-                                print("\n\n------------------------------\n\n")
+                                print("\n\n---------------------------------------------\n\n")
                                 module.listOperations()
                         elif listSelector == 1:
                                 print("You selected OPTION 1")
-                                print("\n\n------------------------------")
+                                print("\n\n---------------------------------------------")
                                 module.charRemover()
                         elif listSelector == 2:
                                 print("You selected OPTION 2")
-                                print("\n\n------------------------------")
+                                print("\n\n---------------------------------------------")
                                 module.charInstance()
                         elif listSelector == 3:
                                 print("You selected OPTION 3")
-                                print("\n\n------------------------------")
+                                print("\n\n---------------------------------------------")
                                 module.sortBySign()
                         elif listSelector == 4:
                                 print("You selected OPTION 4")
-                                print("\n\n------------------------------")
+                                print("\n\n---------------------------------------------")
                                 module.mergeListNoDupe()
                         elif listSelector == 5:
                                 print("You selected OPTION 5")
-                                print("\n\n------------------------------")
+                                print("\n\n---------------------------------------------")
                                 module.filterDupes()
                         else:
                                 print("You selected OPTION 6")
-                                print("\n\n------------------------------\n\n")
+                                print("\n\n---------------------------------------------\n\n")
                                 module.listOperations()
                         
                         break
@@ -78,31 +79,37 @@ def main():
                 except EOFError:
                         print("\nInvalid Input\n")                
 
-        while True:
-                try:
-                        continuationSelector = input("\n\nEnter 1 to continue, 0 to terminate: ")
-                        continuationSelector = int(continuationSelector)
+        print("\n\n\n---------------------------------------------")
+        print("\n\nType \033[38;2;255;165;0m'CLS'\033[36m to clear screen and continue")
+        print("Hit \033[38;2;255;165;0mENTER\033[36m to continue without clearing screen")
+        print("Type \033[38;2;255;165;0m'END'\033[36m to terminate")
+        print("\n\033[31mANY OTHER ENTRY WILL TERMINATE THE PROGRAM\033[36m\n")
 
-                        if continuationSelector == 1:
-                                system('cls')
-                                main()
-                        elif continuationSelector == 0:
-                                system('cls')
-                                print("THANK YOU!")
-                                timer(3)
-                                system('cls')
-                                break
-                except ValueError:
-                        print("\nInvalid Input. Terminating\n")
-                        timer(3)
-                        system('cls')
-                        break
-                except EOFError:
-                        print("\nInvalid Input. Terminating\n")
-                        timer(3)
-                        system('cls')
-                        break
+        continueChoice = input("Enter any command from the above list: \033[38;2;255;165;0m")
+        print("\033[36m", end="")
         
+        if continueChoice.lower() == 'cls':
+                for i in range(1, 4):
+                        print("Clearing screen in \033[38;2;255;165;0m", 4-i, "\033[36m")
+                        timer(1)
+                        print("\033[F\033[K", end="")
+
+                system('cls')
+
+                main()
+        elif continueChoice.replace(" ", "") == '':
+                print("\033[F\033[KEnter any command from the above list: \033[38;2;255;165;0m*BLANK*\033[36m")
+                print("\n\n\n---------------------------------------------\n\n\n")
+                main()
+        elif continueChoice.lower() == 'end':
+                print("\nTHANK YOU")
+
+                for i in range(1, 4):
+                        print("Terminating in \033[38;2;255;165;0m", 4-i, "\033[36m")
+                        timer(1)
+                        print("\033[F\033[K", end="")
+        else:
+                print("\n\033[36mInvalid Input. Terminated")
 main()
 
 
