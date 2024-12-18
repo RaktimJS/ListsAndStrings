@@ -85,9 +85,9 @@ def charRemover():
         print("_______________________________________________________\n")
 
         str = input("Enter a string: \033[38;2;255;165;0m")
-        print("\033[36m", end="")
+        print("\033[38;2;212;212;212m", end="")
         toBeRemoved = input("Enter the character to be removed from the string (Case sensitive): \033[38;2;255;165;0m")
-        print("\033[36m", end="")
+        print("\033[38;2;212;212;212m", end="")
         
         print("\n")
 
@@ -112,7 +112,7 @@ def charInstance():
         print("________________________________________________________________\n")
 
         str = input("Enter a string: \033[38;2;255;165;0m")
-        print("\033[36m", end="")
+        print("\033[38;2;212;212;212m", end="")
         targetChar = input("Enter the character to count instances of: ")
 
         str = str.upper()
@@ -128,7 +128,7 @@ def charInstance():
                                 if i == targetChar:
                                         instance += 1
 
-                print(f"\nNumber of instances of \"{targetChar}\" in {str} is \033[38;2;255;165;0m{instance}\033[36m")
+                print(f"\nNumber of instances of \"{targetChar}\" in {str} is \033[38;2;255;165;0m{instance}\033[38;2;212;212;212m")
         else:
                 print("\nCan't remove multiple characters at a time")
 
@@ -150,7 +150,7 @@ def sortBySign():
         while True:
                 try:
                         inputTaker = input("Enter a number (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
-                        print("\033[36m", end="")
+                        print("\033[38;2;212;212;212m", end="")
                         
                         if inputTaker != "END":
                                 inputTaker = int(inputTaker)
@@ -213,7 +213,7 @@ def mergeListNoDupe():
         while True:
                 try:
                         inputTaker = input("    Enter a number (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
-                        print("\033[36m", end="")
+                        print("\033[38;2;212;212;212m", end="")
                         
                         if inputTaker != "END":
                                 inputTaker = int(inputTaker)
@@ -232,7 +232,7 @@ def mergeListNoDupe():
         while True:
                 try:
                         inputTaker = input("    Enter a number (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
-                        print("\033[36m", end="")
+                        print("\033[38;2;212;212;212m", end="")
                         
                         if inputTaker != "END":
                                 inputTaker = int(inputTaker)
@@ -268,7 +268,7 @@ def filterDupes():
         print("_______________________________________________________\n")
 
         str = input("Enter a string: \033[38;2;255;165;0m")
-        print("\033[36m", end="")
+        print("\033[38;2;212;212;212m", end="")
         str = str.replace(" ", "")
         str = str.upper()
 
@@ -309,7 +309,7 @@ def appender():
         print("\n\n        APPEND VALUES")
         print("        -------------")
         value = input("        Enter a value: \033[38;2;255;165;0m")
-        print("\033[36m", end="")
+        print("\033[38;2;212;212;212m", end="")
         newList.append(value)
 
         print("\n        The new list is: \n        ", newList)
@@ -321,14 +321,14 @@ def valueInserter():
         print("\n\n\n        INSERT VALUES")
         print("        -------------")
         elem = input("        Enter an value: \033[38;2;255;165;0m")
-        print("\033[36m", end="")
+        print("\033[38;2;212;212;212m", end="")
 
         print(f"\n        If position entered exceeds list length. It will be set to it to 1 more than list length")
 
 
         while True:
                 pos = input(f"\n        Enter the position you want \"{elem}\" to be at: \033[38;2;255;165;0m")
-                print("\033[36m", end="")
+                print("\033[38;2;212;212;212m", end="")
 
                 try:
                         pos = int(pos)
@@ -359,7 +359,7 @@ def listAppender():
 
         while True:
                 inputTaker = input("        Enter a value (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
-                print("\033[36m", end="")
+                print("\033[38;2;212;212;212m", end="")
                         
                 if inputTaker != "END":
                         numList.append(inputTaker)
@@ -381,7 +381,7 @@ def modfier():
         while True: 
                 try:
                         posVal = input("        Enter the position of the value you want to modify: \033[38;2;255;165;0m")
-                        print("\033[36m", end="")
+                        print("\033[38;2;212;212;212m", end="")
                         posVal = int(posVal)
                         posVal = posVal - 1
                         break;
@@ -391,7 +391,7 @@ def modfier():
                         print("\n        Invalid Input\n")
         
         elemVal = input("        Enter the new value: \033[38;2;255;165;0m")
-        print("\033[36m", end="")
+        print("\033[38;2;212;212;212m", end="")
 
         newList.pop(posVal)
         newList.insert(posVal, elemVal)
@@ -408,7 +408,7 @@ def delByPos():
         while True: 
                 try:
                         posVal = input("        Enter the position: \033[38;2;255;165;0m")
-                        print("\033[36m", end="")
+                        print("\033[38;2;212;212;212m", end="")
                         posVal = int(posVal)
                         posVal = posVal - 1
                         break;
@@ -430,7 +430,7 @@ def delByVal():
 
         while True:
                 value = input("        Enter the value: \033[38;2;255;165;0m")
-                print("\033[36m", end="")
+                print("\033[38;2;212;212;212m", end="")
 
                 if value in newList:
                         newList.remove(value)

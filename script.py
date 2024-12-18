@@ -7,6 +7,7 @@ import module
 import time
 from os import system as system
 from os import remove as remove
+from pathlib import Path
 
 system('pyinstaller --onefile --distpath "." script.py')
 system('rmdir /s /q "build"')
@@ -24,7 +25,8 @@ def timer(s):
 
 
 def main():
-        print("OPERATIONS ON, AND USING LISTS AND STRINGS\n")
+        print("\033[38;2;212;212;212m")
+        print("\n\nOPERATIONS ON, AND USING LISTS AND STRINGS\n")
 
         print("Enter 1 to REMOVE ALL OCCURRENCES OF A PARTICULAR CHARACTER FROM A GIVEN STRING")
         print("Enter 2 to CHECK NO. OF INSTANCES OF A PARTICULAR CHARACTER IN A STRING")
@@ -35,7 +37,7 @@ def main():
 
         while True:
                 listSelector = input("Enter your selection from the above list (Exceding values will be adjusted): \033[38;2;255;165;0m")
-                print("\033[36m", end="")
+                print("\033[38;2;212;212;212m", end="")
 
                 try:
                         listSelector = int(listSelector)
@@ -80,17 +82,17 @@ def main():
                         print("\nInvalid Input\n")                
 
         print("\n\n\n---------------------------------------------")
-        print("\n\nType \033[38;2;255;165;0m'CLS'\033[36m to clear screen and continue")
-        print("Hit \033[38;2;255;165;0mENTER\033[36m to continue without clearing screen")
-        print("Type \033[38;2;255;165;0m'END'\033[36m to terminate")
-        print("\n\033[31mANY OTHER ENTRY WILL TERMINATE THE PROGRAM\033[36m\n")
+        print("\n\nType \033[38;2;255;165;0m'CLS'\033[38;2;212;212;212m to clear screen and continue")
+        print("Hit \033[38;2;255;165;0mENTER\033[38;2;212;212;212m to continue without clearing screen")
+        print("Type \033[38;2;255;165;0m'END'\033[38;2;212;212;212m to terminate")
+        print("\n\033[31mANY OTHER ENTRY WILL TERMINATE THE PROGRAM\033[38;2;212;212;212m\n")
 
         continueChoice = input("Enter any command from the above list: \033[38;2;255;165;0m")
-        print("\033[36m", end="")
+        print("\033[38;2;212;212;212m", end="")
         
         if continueChoice.lower() == 'cls':
                 for i in range(1, 4):
-                        print("Clearing screen in \033[38;2;255;165;0m", 4-i, "\033[36m")
+                        print("Clearing screen in \033[38;2;255;165;0m", 4-i, "\033[38;2;212;212;212m")
                         timer(1)
                         print("\033[F\033[K", end="")
 
@@ -98,18 +100,18 @@ def main():
 
                 main()
         elif continueChoice.replace(" ", "") == '':
-                print("\033[F\033[KEnter any command from the above list: \033[38;2;255;165;0m*BLANK*\033[36m")
+                print("\033[F\033[KEnter any command from the above list: \033[38;2;255;165;0m*BLANK*\033[38;2;212;212;212m")
                 print("\n\n\n---------------------------------------------\n\n\n")
                 main()
         elif continueChoice.lower() == 'end':
                 print("\nTHANK YOU")
 
                 for i in range(1, 4):
-                        print("Terminating in \033[38;2;255;165;0m", 4-i, "\033[36m")
+                        print("Terminating in \033[38;2;255;165;0m", 4-i, "\033[38;2;212;212;212m")
                         timer(1)
                         print("\033[F\033[K", end="")
         else:
-                print("\n\033[36mInvalid Input. Terminated")
+                print("\n\033[38;2;212;212;212mInvalid Input. Terminated")
 main()
 
 
