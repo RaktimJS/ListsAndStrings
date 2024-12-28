@@ -28,7 +28,7 @@ TURN LINE WRAPPING OFF FOR A BETTER VIEW
 |        6. CHECK module1.py                                        |
 +-------------------------------------------------------------------+
 
-Last Edited on 18/12/2024
+Last Edited on 27/12/2024
 
 """
 
@@ -44,11 +44,11 @@ elements = [
         'Blockchain', 'Syntax', 'Java', 'Python', 'API',
         'Bitrate', 'Quantum', 'Emulator', 'Virtualization','Cryptography',
 
-        'Apple', 'Mango', 'Banana', 'Guava', 'Pineapple',
-        'Papaya', 'Orange', 'Grapes', 'Watermelon', 'Litchi',
-        'Pear','Pomegranate','Kiwi','Dragonfruit','Chikoo',
-        'Custardapple', 'Coconut', 'Blueberry', 'Raspberry', 'Blackcurrant',
-        'Starfruit', 'Fig', 'Plum', 'Persimmon', 'Mulberry',
+        'Russia', 'United States', 'Japan', 'France', 'Germany',
+        'Australia', 'South Korea', 'United Kingdom', 'Israel', 'Brazil',
+        'South Africa', 'Singapore', 'Indonesia', 'Vietnam', 'Saudi Arabia',
+        'United Arab Emirates', 'Qatar', 'Nepal', 'Bhutan', 'Sri Lanka',
+        'Mauritius', 'Seychelles', 'Mexico', 'Thailand', 'Kenya',
 
         'Mumbai', 'Delhi', 'Bengaluru', 'Hyderabad', 'Kolkata',
         'Chennai', 'Jaipur', 'Ahmedabad', 'Pune', 'Lucknow',
@@ -79,17 +79,17 @@ def randList():
         return output
 
 def charRemover():
-        print("\n\n")
+        print(f"\n\n")
 
-        print("REMOVES A DESIRED CHARACTER FROM A STRING GIVEN BY USER")
-        print("_______________________________________________________\n")
+        print(f"REMOVES A DESIRED CHARACTER FROM A STRING GIVEN BY USER")
+        print(f"_______________________________________________________\n")
 
-        str = input("Enter a string: \033[38;2;255;165;0m")
-        print("\033[38;2;212;212;212m", end="")
-        toBeRemoved = input("Enter the character to be removed from the string (Case sensitive): \033[38;2;255;165;0m")
-        print("\033[38;2;212;212;212m", end="")
+        str = input(f"Enter a string: \033[38;2;255;165;0m")
+        print(f"\033[38;2;212;212;212m", end="")
+        toBeRemoved = input(f"Enter the character to be removed from the string (Case sensitive): \033[38;2;255;165;0m")
+        print(f"\033[38;2;212;212;212m", end="")
         
-        print("\n")
+        print(f"\n")
 
         if len(toBeRemoved) == 1:
                 if toBeRemoved not in str:
@@ -103,17 +103,19 @@ def charRemover():
                                 else:
                                         print(i, end="")
         else:
-                print("Can't remove multiple characters at a time")
+                print(f"Can't remove multiple characters at a time")
 
 def charInstance():
-        print("\n\n")
+        print(f"\n\n")
 
-        print("CHECKS NUMBER OF INSTANCES OF A PARTICULAR CHARACTER IN A STRING")
-        print("________________________________________________________________\n")
+        print(f"CHECKS NUMBER OF INSTANCES OF A PARTICULAR CHARACTER IN A STRING")
+        print(f"________________________________________________________________\n")
 
-        str = input("Enter a string: \033[38;2;255;165;0m")
-        print("\033[38;2;212;212;212m", end="")
-        targetChar = input("Enter the character to count instances of: ")
+        str = input(f"Enter a string: \033[38;2;255;165;0m")
+        print(f"\033[38;2;212;212;212m", end="")
+
+        targetChar = input(f"Enter the character to count instances of: \033[38;2;255;165;0m")
+        print(f"\033[38;2;212;212;212m", end="")
 
         str = str.upper()
         targetChar = targetChar.upper()
@@ -130,13 +132,13 @@ def charInstance():
 
                 print(f"\nNumber of instances of \"{targetChar}\" in {str} is \033[38;2;255;165;0m{instance}\033[38;2;212;212;212m")
         else:
-                print("\nCan't remove multiple characters at a time")
+                print(f"\nCan't remove multiple characters at a time")
 
 def sortBySign():
-        print("\n\n")
+        print(f"\n\n")
 
-        print("CREATES 2 LISTS OF POSITIVE AND NEGATIVE INTEGERS FROM A LIST OF NUMBERS")
-        print("________________________________________________________________________\n")
+        print(f"CREATES 2 LISTS OF POSITIVE AND NEGATIVE INTEGERS FROM A LIST OF NUMBERS")
+        print(f"________________________________________________________________________\n")
 
         numList = []
         positiveList = []
@@ -149,8 +151,8 @@ def sortBySign():
 
         while True:
                 try:
-                        inputTaker = input("Enter a number (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
-                        print("\033[38;2;212;212;212m", end="")
+                        inputTaker = input(f"Enter a number (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
+                        print(f"\033[38;2;212;212;212m", end="")
                         
                         if inputTaker != "END":
                                 inputTaker = int(inputTaker)
@@ -160,9 +162,9 @@ def sortBySign():
                                 break
 
                 except ValueError:
-                        print("\nInvalid input\n")
+                        print(f"\nInvalid input\n")
                 except EOFError:
-                        print("\nInvalid Input\n")
+                        print(f"\nInvalid Input\n")
         
 
         for i in numList:
@@ -174,33 +176,33 @@ def sortBySign():
                         zeroCounter += 1
 
         if len(numList) == 0:
-                print("The list is empty. Nothing to show")
+                print(f"The list is empty. Nothing to show")
         else:
                 print(f"\n\nThe list you have entered are: {numList}")
 
 
                 if len(positiveList) == 0:
-                        print("No number in the above list is positive")
+                        print(f"No number in the above list is positive")
                 else:
                         print(f"\nThe list of positive numbers are: {positiveList}")
 
 
                 if len(negativeList) == 0:
-                        print("No number in the above list is negative")
+                        print(f"No number in the above list is negative")
                 else:
                         print(f"The list of negative numbers are: {negativeList}")
 
 
                 if zeroCounter == 0:
-                        print("There is no appearence of 0 is the list")
+                        print(f"There is no appearence of 0 is the list")
                 else:
                         print(f"Total number of appearence of 0 is: {zeroCounter}")
 
 def mergeListNoDupe():
-        print("\n\n")
+        print(f"\n\n")
 
-        print("MERGE 2 LISTS SUCH THAT THE FINAL LIST HAS NO DUPLICATE VALUES")
-        print("______________________________________________________________\n")
+        print(f"MERGE 2 LISTS SUCH THAT THE FINAL LIST HAS NO DUPLICATE VALUES")
+        print(f"______________________________________________________________\n")
 
         numList = []
         numList2 = []
@@ -208,12 +210,12 @@ def mergeListNoDupe():
 
         inputTaker = ""
 
-        print("FIRST LIST:")
+        print(f"FIRST LIST:")
 
         while True:
                 try:
-                        inputTaker = input("    Enter a number (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
-                        print("\033[38;2;212;212;212m", end="")
+                        inputTaker = input(f"    Enter a number (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
+                        print(f"\033[38;2;212;212;212m", end="")
                         
                         if inputTaker != "END":
                                 inputTaker = int(inputTaker)
@@ -223,16 +225,16 @@ def mergeListNoDupe():
                                 break
 
                 except ValueError:
-                        print("\n       Invalid input\n")
+                        print(f"\n       Invalid input\n")
                 except EOFError:
-                        print("\n       Invalid Input\n")
+                        print(f"\n       Invalid Input\n")
 
-        print("SECOND LIST:")
+        print(f"SECOND LIST:")
 
         while True:
                 try:
-                        inputTaker = input("    Enter a number (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
-                        print("\033[38;2;212;212;212m", end="")
+                        inputTaker = input(f"    Enter a number (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
+                        print(f"\033[38;2;212;212;212m", end="")
                         
                         if inputTaker != "END":
                                 inputTaker = int(inputTaker)
@@ -242,12 +244,22 @@ def mergeListNoDupe():
                                 break
 
                 except ValueError:
-                        print("\n       Invalid input\n")
+                        print(f"\n       Invalid input\n")
                 except EOFError:
-                        print("\n       Invalid Input\n")
+                        print(f"\n       Invalid Input\n")
                 
-        print("\nFirst List: ", numList)
-        print("Second List:", numList2)
+        if len(numList) != 0:
+                print(f"\nFirst List: ", numList)
+        else:
+                print(f"\nFirst List is \033[38;2;255;165;0mEMPTY\033[38;2;212;212;212m")
+
+
+        if len(numList2) != 0:
+                print(f"Second List:", numList2)
+        else:
+                print(f"Second List is \033[38;2;255;165;0mEMPTY\033[38;2;212;212;212m")
+        
+
 
         numList.extend(numList2)
 
@@ -259,16 +271,20 @@ def mergeListNoDupe():
                 else:
                         newFullList.append(k)
 
-        print("\nThe 2 lists joined together without any repetition of elements is:", newFullList)
+        if len(newFullList) != 0:
+                print(f"\nThe 2 lists joined together without any repetition of elements is:", newFullList)
+        else:
+                print(f"\nBoth lists are empty")
+        
 
 def filterDupes():
-        print("\n\n")
+        print(f"\n\n")
 
-        print("CREATE A LIST OF ALL CHARACTERS THAT REPEAT IN A STRING")
-        print("_______________________________________________________\n")
+        print(f"CREATE A LIST OF ALL CHARACTERS THAT REPEAT IN A STRING")
+        print(f"_______________________________________________________\n")
 
-        str = input("Enter a string: \033[38;2;255;165;0m")
-        print("\033[38;2;212;212;212m", end="")
+        str = input(f"Enter a string: \033[38;2;255;165;0m")
+        print(f"\033[38;2;212;212;212m", end="")
         str = str.replace(" ", "")
         str = str.upper()
 
@@ -284,8 +300,13 @@ def filterDupes():
                 elif listOfChars.count(i) > 1 and i not in multiAppearence:
                         multiAppearence.append(i)
 
+
         print(f"\nThe list of elements that appear only once in {placeholder}: {sorted(singleAppearence)}")
-        print(f"The list of elements that appear more that once in {placeholder}: {sorted(multiAppearence)}")
+
+        if len(multiAppearence) != 0:
+                print(f"The list of elements that appear more that once in {placeholder}: {sorted(multiAppearence)}")
+        else:
+                print(f"There is no repeating character in {placeholder}")
 
 
 
@@ -306,38 +327,38 @@ newList = randomList
 
 # Appender
 def appender():
-        print("\n\n        APPEND VALUES")
-        print("        -------------")
-        value = input("        Enter a value: \033[38;2;255;165;0m")
-        print("\033[38;2;212;212;212m", end="")
+        print(f"\n\n        APPEND VALUES")
+        print(f"        -------------")
+        value = input(f"        Enter a value: \033[38;2;255;165;0m")
+        print(f"\033[38;2;212;212;212m", end="")
         newList.append(value)
 
-        print("\n        The new list is: \n        ", newList)
+        print(f"\n        The new list is: \n        ", newList)
 
 
 
 # Value Inserter
 def valueInserter():
-        print("\n\n\n        INSERT VALUES")
-        print("        -------------")
-        elem = input("        Enter an value: \033[38;2;255;165;0m")
-        print("\033[38;2;212;212;212m", end="")
+        print(f"\n\n\n        INSERT VALUES")
+        print(f"        -------------")
+        elem = input(f"        Enter an value: \033[38;2;255;165;0m")
+        print(f"\033[38;2;212;212;212m", end="")
 
         print(f"\n        If position entered exceeds list length. It will be set to it to 1 more than list length")
 
 
         while True:
                 pos = input(f"\n        Enter the position you want \"{elem}\" to be at: \033[38;2;255;165;0m")
-                print("\033[38;2;212;212;212m", end="")
+                print(f"\033[38;2;212;212;212m", end="")
 
                 try:
                         pos = int(pos)
                         pos = pos
                         break
                 except ValueError:
-                        print("\n        Invalid input\n")
+                        print(f"\n        Invalid input\n")
                 except EOFError:
-                        print("\n        Invalid Input\n")
+                        print(f"\n        Invalid Input\n")
 
         newList.insert(pos - 1, elem)
 
@@ -350,16 +371,16 @@ def valueInserter():
 
 # List Appender
 def listAppender():
-        print("\n\n\n        APPEND LIST")
-        print("        -----------")
+        print(f"\n\n\n        APPEND LIST")
+        print(f"        -----------")
 
         numList = []
         
         i = 0
 
         while True:
-                inputTaker = input("        Enter a value (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
-                print("\033[38;2;212;212;212m", end="")
+                inputTaker = input(f"        Enter a value (Type 'END' to end. Case sensitive): \033[38;2;255;165;0m")
+                print(f"\033[38;2;212;212;212m", end="")
                         
                 if inputTaker != "END":
                         numList.append(inputTaker)
@@ -369,83 +390,83 @@ def listAppender():
 
         newList.append(numList)
 
-        print("\n        The new list is: \n        ", newList)
+        print(f"\n        The new list is: \n        ", newList)
 
 
 
-
+# Modify by position
 def modfier():
-        print("\n\n\n        MODIFY ELEMENTS")
-        print("        ---------------")
+        print(f"\n\n\n        MODIFY ELEMENTS")
+        print(f"        ---------------")
 
         while True: 
                 try:
-                        posVal = input("        Enter the position of the value you want to modify: \033[38;2;255;165;0m")
-                        print("\033[38;2;212;212;212m", end="")
+                        posVal = input(f"        Enter the position of the value you want to modify: \033[38;2;255;165;0m")
+                        print(f"\033[38;2;212;212;212m", end="")
                         posVal = int(posVal)
                         posVal = posVal - 1
                         break;
                 except ValueError:
-                        print("\n        Invalid input\n")
+                        print(f"\n        Invalid input\n")
                 except EOFError:
-                        print("\n        Invalid Input\n")
+                        print(f"\n        Invalid Input\n")
         
-        elemVal = input("        Enter the new value: \033[38;2;255;165;0m")
-        print("\033[38;2;212;212;212m", end="")
+        elemVal = input(f"        Enter the new value: \033[38;2;255;165;0m")
+        print(f"\033[38;2;212;212;212m", end="")
 
         newList.pop(posVal)
         newList.insert(posVal, elemVal)
 
-        print("        The modified list is: \n        ", newList)
+        print(f"        The modified list is: \n        ", newList)
 
 
 
 # Delete Element By Position
 def delByPos():
-        print("\n\n\n        DELETE ELEMENT BY POSITION")
-        print("        --------------------------")
+        print(f"\n\n\n        DELETE ELEMENT BY POSITION")
+        print(f"        --------------------------")
 
         while True: 
                 try:
-                        posVal = input("        Enter the position: \033[38;2;255;165;0m")
-                        print("\033[38;2;212;212;212m", end="")
+                        posVal = input(f"        Enter the position: \033[38;2;255;165;0m")
+                        print(f"\033[38;2;212;212;212m", end="")
                         posVal = int(posVal)
                         posVal = posVal - 1
                         break;
                 except ValueError:
-                        print("\n        Invalid input\n")
+                        print(f"\n        Invalid input\n")
                 except EOFError:
-                        print("\n        Invalid Input\n")
+                        print(f"\n        Invalid Input\n")
         
         newList.pop(posVal)
 
-        print("        The modified list is: \n        ", newList)
+        print(f"        The modified list is: \n        ", newList)
 
 
 
 # Delete Element By Value
 def delByVal():
-        print("\n\n\n        DELETE ELEMENT BY VALUE")
-        print("        -----------------------")
+        print(f"\n\n\n        DELETE ELEMENT BY VALUE")
+        print(f"        -----------------------")
 
         while True:
-                value = input("        Enter the value: \033[38;2;255;165;0m")
-                print("\033[38;2;212;212;212m", end="")
+                value = input(f"        Enter the value: \033[38;2;255;165;0m")
+                print(f"\033[38;2;212;212;212m", end="")
 
                 if value in newList:
                         newList.remove(value)
                         break;
                 else:
-                        print("        Entered value is not in the list")
+                        print(f"        Entered value is not in the list")
 
-        print("        The updated list is: \n        ", newList)
+        print(f"        The updated list is: \n        ", newList)
 
 
 
 # Ascending Sort
 def ascendingSorter():
-        print("\n\n\n        ASCENDING SORT")
-        print("        --------------")
+        print(f"\n\n\n        ASCENDING SORT")
+        print(f"        --------------")
 
         for i in newList:
                 if type(i) == list:
@@ -456,17 +477,17 @@ def ascendingSorter():
         newList.sort(key = str.upper)
         newList.extend(listList)
 
-        print("        Sorted in ascending order: \n        ", end="")
+        print(f"        Sorted in ascending order: \n        ", end="")
         print(newList)
         
 
 
 # Descending Sort
 def descendingSorter():
-        print("\n\n\n        DESCENDING SORT")
-        print("        ---------------")
+        print(f"\n\n\n        DESCENDING SORT")
+        print(f"        ---------------")
 
-        print("        Sorted in descending order: \n        ", end="")
+        print(f"        Sorted in descending order: \n        ", end="")
         newList.reverse()
         print(newList)
 
@@ -474,10 +495,10 @@ def descendingSorter():
 
 # Parent List Operation Function
 def listOperations():
-        print("PERFORM VARIOUS OPERATIONS TO A LIST")
-        print("____________________________________\n")
+        print(f"PERFORM VARIOUS OPERATIONS TO A LIST")
+        print(f"____________________________________\n")
 
-        print("        Original List: ", newList)
+        print(f"        Original List: ", newList)
 
         appender()
         valueInserter()
@@ -489,5 +510,8 @@ def listOperations():
         descendingSorter()
 
         # Display
-        print("\n\n\n")
-        print("        The list after all different operations is: \n        ", newList)
+        print(f"\n\n\n")
+        print(f"        The list after all different operations is: \n        ", newList)
+
+
+
