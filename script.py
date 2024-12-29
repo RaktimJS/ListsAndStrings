@@ -1,19 +1,23 @@
-# Last Edited on 27/12/2024
+# Last Edited on 28/12/2024
 
 
 
 
+# ------------- SETUP ------------- #
+import os, time
 import module
-import time
-from os import system as system
+from pack import pack
 
-system('pyinstaller --onefile --distpath "." script.py')
-system('cls')
+pack('script.py', True)
+
+os.system('cls')
 
 def timer(s):
         while s: 
                 time.sleep(1)
                 s -= 1
+
+# ---------------------------------------------------------------------------- #
 
 
 
@@ -35,7 +39,7 @@ def main():
 
                 try:
                         listSelector = int(listSelector)
-                        
+                 
                         if listSelector < 0:
                                 print(f"Input out of range. Being set to 1")
                                 print(f"\n\n---------------------------------------------")
@@ -68,7 +72,7 @@ def main():
                                 print(f"You selected OPTION 6")
                                 print(f"\n\n---------------------------------------------\n\n")
                                 module.listOperations()
-                        
+
                         break
                 except ValueError:
                         print(f"\nInvalid Input\n")
@@ -83,14 +87,14 @@ def main():
 
         continueChoice = input(f"Enter any command from the above list (Case insensitive): \033[38;2;255;165;0m")
         print(f"\033[38;2;212;212;212m", end="")
-        
+
         if continueChoice.lower() == 'cls':
                 for i in range(1, 4):
-                        print(f"Clearing screen in \033[38;2;255;165;0m", 4-i, "\033[38;2;212;212;212m")
+                        print(f"Clearing screen in\033[38;2;255;165;0m", 4-i, "\033[38;2;212;212;212m")
                         timer(1)
                         print(f"\033[F\033[K", end="")
 
-                system('cls')
+                os.system('cls')
 
                 main()
         elif continueChoice.replace(" ", "") == '':
@@ -101,11 +105,11 @@ def main():
                 print(f"\nTHANK YOU")
 
                 for i in range(1, 4):
-                        print(f"Terminating in \033[38;2;255;165;0m", 4-i, "\033[38;2;212;212;212m")
+                        print(f"Terminating in\033[38;2;255;165;0m", 4-i, "\033[38;2;212;212;212m")
                         timer(1)
                         print(f"\033[F\033[K", end="")
-                        
-                system('cls')
+
+                os.system('cls')
         else:
                 print(f"\n\033[31mInvalid Input. Terminated\033[38;2;212;212;212m")
 main()
